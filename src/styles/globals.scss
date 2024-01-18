@@ -1,0 +1,162 @@
+@import "./base";
+
+*,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background: url('../../public/bg.jpg') center top no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0;
+
+  @include mquery(mid_small_screen) {
+    padding: 0px;
+  }
+
+  .pageheader {
+    color: #ecd2d2;
+    font-size: 50px;
+    text-align: center;
+    margin: 40px 0px;
+
+    @include mquery(mid_small_screen) {
+      font-size: 36px;
+    }
+  }
+
+  .schedule-container {
+    margin: 0px auto;
+    display: flex;
+    gap: 50px;
+    position: relative;
+
+    @include mquery(mid_small_screen) {
+      width: 100%;
+      display: block;
+    }
+
+    option {
+      color: #000;
+    }
+
+    .attendance-section {
+      width: 50%;
+
+      @include mquery(mid_small_screen) {
+        width: 100%;
+      }
+    }
+
+    .schedule-section {
+      width: 50%;
+
+      @include mquery(mid_small_screen) {
+        width: 100%;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #fff;
+        text-align: center;
+        background: rgb(15 11 8 / 63%);
+        color: $tdcolor;
+        font-size: $tdFontSize;
+
+        @include mquery(mid_small_screen) {
+          font-size: 18px;
+        }
+
+        select {
+          color: #fff;
+          background-color: rgb(174 179 176 / 60%);
+          padding: 5px 30px;
+          font-size: 24px;
+          cursor: pointer;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          appearance: none;
+
+          /* Remove default arrow in some browsers */
+          @include mquery(mid_small_screen) {
+            font-size: 18px;
+          }
+        }
+
+        /* Style when the select box is focused */
+        select:focus {
+          outline: none;
+          /* Remove the default focus outline */
+          border-color: #007bff;
+          /* Change border color on focus */
+        }
+
+        /* Style the dropdown arrow icon */
+        select::-ms-expand,
+        select::-ms-value {
+          display: none;
+          /* Hide default arrow in Internet Explorer/Edge */
+        }
+
+        /* Style the arrow icon for other browsers */
+        select::after {
+          content: '\25BC';
+          /* Unicode for a down arrow ▼ */
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          pointer-events: none;
+          /* Ensure that the arrow does not interfere with the select box interaction */
+        }
+      }
+
+      th {
+        background-color: $tableHeaderBgColor;
+        color: $thcolor;
+        font-size: $thFontSize;
+
+        @include mquery(mid_small_screen) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    h2 {
+      color: $thcolor;
+      font-size: $h2_fontSize;
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include mquery(mid_small_screen) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .separator {
+    width: 4px;
+    background-color: #fff;
+
+    @include mquery(mid_small_screen) {
+      height: 4px;
+      width: 100%;
+      margin: 40px 0px;
+    }
+  }
+}

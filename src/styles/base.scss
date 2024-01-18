@@ -1,0 +1,64 @@
+@import "./variable";
+@mixin mquery($size) {
+    @if $size == large_screen {
+      @media (min-width: 1600px) {
+        @content;
+      }
+    }
+    @if $size == small_desk {
+        @media (min-width: 1024px) and (max-width: 1280px){
+          @content;
+        }
+      }
+    @if $size == desk {
+        @media (min-width: 1280px) and (max-width: 1600px){
+          @content;
+        }
+      }
+    @if $size == ipad {
+      @media (min-width: 768px) {
+        @content;
+      }
+    }
+    @if $size == ipad-pro {
+      @media (min-width: 1024px) and (orientation: portrait) {
+        @content;
+      }
+    }
+    @if $size == mobile {
+        @media (max-width: 1200px) and (orientation: portrait){
+            @content;
+          }
+    }
+    @if $size == before_ipad {
+      @media (max-width: 767px) {
+        @content;
+      }
+    }
+    @if $size == mid_small_screen {
+      @media (max-width: 600px) {
+        @content;
+      }
+    }
+    @if $size == small_screen {
+      @media (max-width: 479px) {
+        @content;
+      }
+    }
+    @if $size == very_small_screen {
+      @media (max-width: 374px) {
+        @content;
+      }
+    }
+    @if $size == height_small_screen {
+      @media (min-height: 600px) {
+        @content;
+      }
+    }
+    @if $size == height_large_screen {
+      @media (min-height: 800px) {
+        @content;
+      }
+    }
+    
+  }
